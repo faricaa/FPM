@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0A2A43">
+    <title>Farica Putri Maharani - Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="#" id="manifest-placeholder">
+    <style>
+        :root {
+            --primary-dark: #0A2A43;
+            --primary-light: #86BFE6;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .navbar {
+            background: var(--primary-dark) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--white) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+            margin: 0 0.5rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-light) !important;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #144869 100%);
+            color: var(--white);
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid var(--primary-light);
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: var(--primary-dark);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary-light);
+            display: block;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        
+        .info-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--primary-light);
+        }
+        
+        .info-card strong {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .skill-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+            animation: slideIn 0.5s;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+        
+        .skill-item i {
+            color: var(--primary-light);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .experience-card:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-5px);
+        }
+        
+        .experience-card h4 {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+        
+        .badge-custom {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            margin: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            color: var(--white);
+        }
+        
+        .contact-btn i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-btn.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .contact-btn.whatsapp {
+            background: #25D366;
+        }
+        
+        .contact-btn.email {
+            background: var(--primary-dark);
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            color: var(--white);
+        }
+        
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+        }
+        
+        .modal-header {
+            background: var(--primary-dark);
+            color: var(--white);
+            border-radius: 15px 15px 0 0;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .install-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: none;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        
+        .install-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">FPM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#organisasi">Organisasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kegiatan">Kegiatan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lomba">Lomba</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4">
+                    <div class="profile-img mx-auto" onclick="showImageModal()">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h1>Farica Putri Maharani</h1>
+                    <p class="tagline">"Halo! Saya Mahasiswa Bisnis Digital yang kreatif dan tertarik pada dunia data. Saya suka shopping, olahraga, dan nonton film. Saya ingin berkarier sebagai Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam inovasi teknologi dan bisnis! ✨"</p>
+                    <div class="mt-4">
+                        <a href="#about" class="btn-primary-custom">Tentang Saya</a>
+                        <a href="#contact" class="btn-primary-custom">Hubungi Saya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <p><strong><i class="fas fa-user me-2"></i>Nama:</strong> Farica Putri</p>
+                    </div>
+                    <div class="info-card">
+                        <p><strong><i class="fas fa-calendar me-2"></i>Semester:</strong> 5</p>
+                    </div>
+                    <div class="info-card">
+                        <p><strong><i class="fas fa-graduation-cap me-2"></i>Program Studi:</strong> Bisnis Digital</p>
+                    </div>
+                    <div class="info-card">
+                        <p><strong><i class="fas fa-university me-2"></i>Universitas:</strong> Universitas Sugeng Hartono</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Tujuan Karier</h4>
+                    <p>Saya ingin membangun karier di bidang data sebagai Data Analyst atau Data Scientist. Saya suka mengubah data menjadi cerita dan solusi yang bermanfaat bagi bisnis. Saya siap belajar hal baru, beradaptasi, dan berkontribusi di lingkungan kerja yang positif dan kreatif.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6 mb-4">
+                    <h4 class="mb-4">Hard Skills</h4>
+                    <div class="skill-item">
+                        <i class="fas fa-bullhorn"></i>
+                        <h5>Digital Marketing</h5>
+                        <p>Strategi pemasaran digital dan media sosial</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-palette"></i>
+                        <h5>UI/UX Basic</h5>
+                        <p>Desain antarmuka dan pengalaman pengguna</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h5>Manajemen Bisnis</h5>
+                        <p>Perencanaan dan strategi bisnis</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-laptop"></i>
+                        <h5>Microsoft Office</h5>
+                        <p>Word, Excel, PowerPoint</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="mb-4">Soft Skills</h4>
+                    <div class="skill-item">
+                        <i class="fas fa-microphone"></i>
+                        <h5>Public Speaking</h5>
+                        <p>Kemampuan presentasi dan komunikasi</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-users"></i>
+                        <h5>Teamwork</h5>
+                        <p>Kolaborasi dan kerjasama tim</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-crown"></i>
+                        <h5>Leadership</h5>
+                        <p>Kepemimpinan dan manajemen tim</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-clock"></i>
+                        <h5>Time Management</h5>
+                        <p>Manajemen waktu yang efektif</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organisasi">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Organisasi</h2>
+    
+            <p class="text-muted mb-4">
+                Berikut dokumentasi singkat kegiatan organisasi yang pernah saya ikuti.
+            </p>
+    
+            <div id="organisasiList" class="row g-4">
+    
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="asset/cnth.png" class="card-img-top" alt="Organisasi 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Himpunan Mahasiswa Bisnis Digital</h5>
+                            <p class="card-text">
+                                Staff Divisi Kewirausahaan – Mengelola program inkubasi bisnis kampus.
+                            </p>
+                            <small class="text-muted">2024 - Sekarang</small>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="img/organisasi2.jpg" class="card-img-top" alt="Organisasi 2">
+                        <div class="card-body">
+                            <h5 class="card-title">OSIS SMP</h5>
+                            <p class="card-text">
+                                Ketua Sie Kreatif – Mengorganisir event seni & lomba sekolah.
+                            </p>
+                            <small class="text-muted">2021 - 2022</small>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="img/organisasi" class="card-img-top" alt="Organisasi 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Karang Taruna</h5>
+                            <p class="card-text">
+                                Volunteer – Mengkoordinasi kegiatan sosial & bakti masyarakat.
+                            </p>
+                            <small class="text-muted">2022 - Sekarang</small>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="kegiatan" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Kegiatan Kampus</h2>
+            <div id="kegiatanList" class="gallery-grid"></div>
+            <div class="text-center mt-4">
+                <button class="btn-primary-custom" onclick="addKegiatan()">
+                    <i class="fas fa-plus me-2"></i>Tambah Kegiatan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="lomba">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Lomba</h2>
+            <div id="lombaList" class="row"></div>
+            <div class="text-center mt-4">
+                <button class="btn-primary-custom" onclick="addLomba()">
+                    <i class="fas fa-plus me-2"></i>Tambah Lomba
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="project" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Project & Portofolio</h2>
+            <div id="projectList" class="row"></div>
+            <div class="text-center mt-4">
+                <button class="btn-primary-custom" onclick="addProject()">
+                    <i class="fas fa-plus me-2"></i>Tambah Project
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Saya</h2>
+            <div class="text-center">
+                <a href="https://www.instagram.com/frcp16?igsh=bWllN2x2aGhpM25i" target="_blank" class="contact-btn instagram">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/6282142378801" target="_blank" class="contact-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:farica@example.com" class="contact-btn email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Farica Putri Maharani. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <button class="install-btn" id="installBtn">
+        <i class="fas fa-download me-2"></i>Install App
+    </button>
+
+    <div class="modal fade" id="detailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formModalTitle"></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="formModalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register(createServiceWorker())
+                .then(reg => console.log('Service Worker Registered'))
+                .catch(err => console.log('Service Worker Error', err));
+        }
+
+        function createServiceWorker() {
+            const swCode = `
+                const CACHE_NAME = 'farica-pwa-v1';
+                const urlsToCache = ['/'];
+                
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                    );
+                });
+                
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request)
+                            .then(response => response || fetch(event.request))
+                    );
+                });
+            `;
+            const blob = new Blob([swCode], { type: 'application/javascript' });
+            return URL.createObjectURL(blob);
+        }
+
+        const manifest = {
+            name: 'Farica Putri Maharani',
+            short_name: 'FPM',
+            description: 'Personal Website Farica Putri Maharani',
+            start_url: '/',
+            display: 'standalone',
+            background_color: '#0A2A43',
+            theme_color: '#0A2A43',
+            icons: [{
+                src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230A2A43" width="100" height="100"/><text y="75" font-size="80" fill="%2386BFE6" font-family="Arial" text-anchor="middle" x="50">F</text></svg>',
+                sizes: '512x512',
+                type: 'image/svg+xml'
+            }]
+        };
+
+        const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        document.getElementById('manifest-placeholder').setAttribute('href', manifestURL);
+
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBtn').style.display = 'block';
+        });
+
+        document.getElementById('installBtn').addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                document.getElementById('installBtn').style.display = 'none';
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        function getData(key) {
+            const data = localStorage.getItem(key);
+            return data ? JSON.parse(data) : [];
+        }
+
+        function saveData(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        function renderOrganisasi() {
+            const list = document.getElementById('organisasiList');
+            const data = getData('organisasi');
+            
+            if (data.length === 0) {
+                list.innerHTML = '<div class="col-12 text-center"><p class="text-muted">Belum ada data organisasi. Klik tombol di bawah untuk menambahkan.</p></div>';
+                return;
+            }
+            
+            list.innerHTML = data.map((item, index) => `
+                <div class="col-lg-6 mb-4">
+                    <div class="experience-card" onclick="showOrganisasiDetail(${index})">
+                        <h4>${item.nama}</h4>
+                        <p class="mb-2"><span class="badge-custom">${item.jabatan}</span></p>
+                        <p class="text-muted mb-0"><i class="fas fa-calendar me-2"></i>${item.tahun}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addOrganisasi() {
+            document.getElementById('formModalTitle').textContent = 'Tambah Organisasi';
+            document.getElementById('formModalBody').innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">Nama Organisasi</label>
+                    <input type="text" class="form-control" id="orgNama" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Jabatan/Posisi</label>
+                    <input type="text" class="form-control" id="orgJabatan" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tahun</label>
+                    <input type="text" class="form-control" id="orgTahun" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Peran & Pencapaian</label>
+                    <textarea class="form-control" id="orgPeran" rows="4" required></textarea>
+                </div>
+                <button class="btn btn-primary w-100" onclick="saveOrganisasi()">Simpan</button>
+            `;
+            new bootstrap.Modal(document.getElementById('formModal')).show();
+        }
+
+        function saveOrganisasi() {
+            const data = getData('organisasi');
+            data.push({
+                nama: document.getElementById('orgNama').value,
+                jabatan: document.getElementById('orgJabatan').value,
+                tahun: document.getElementById('orgTahun').value,
+                peran: document.getElementById('orgPeran').value
+            });
+            saveData('organisasi', data);
+            bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
+            renderOrganisasi();
+        }
+
+        function showOrganisasiDetail(index) {
+            const data = getData('organisasi')[index];
+            document.getElementById('modalTitle').textContent = data.nama;
+            document.getElementById('modalBody').innerHTML = `
+                <p><strong>Jabatan:</strong> ${data.jabatan}</p>
+                <p><strong>Tahun:</strong> ${data.tahun}</p>
+                <p><strong>Peran & Pencapaian:</strong></p>
+                <p>${data.peran}</p>
+            `;
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        }
+
+        function renderKegiatan() {
+            const list = document.getElementById('kegiatanList');
+            const data = getData('kegiatan');
+            
+            if (data.length === 0) {
+                list.innerHTML = '<div class="text-center"><p class="text-muted">Belum ada kegiatan. Klik tombol di bawah untuk menambahkan.</p></div>';
+                return;
+            }
+            
+            list.innerHTML = data.map((item, index) => `
+                <div class="gallery-item" onclick="showKegiatanDetail(${index})">
+                    <i class="fas fa-image"></i>
+                </div>
+            `).join('');
+        }
+
+        function addKegiatan() {
+            document.getElementById('formModalTitle').textContent = 'Tambah Kegiatan';
+            document.getElementById('formModalBody').innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">Nama Kegiatan</label>
+                    <input type="text" class="form-control" id="kegNama" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Jenis Kegiatan</label>
+                    <select class="form-control" id="kegJenis">
+                        <option>Kepanitiaan</option>
+                        <option>Seminar</option>
+                        <option>Workshop</option>
+                        <option>Volunteer</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="kegDeskripsi" rows="3" required></textarea>
+                </div>
+                <button class="btn btn-primary w-100" onclick="saveKegiatan()">Simpan</button>
+            `;
+            new bootstrap.Modal(document.getElementById('formModal')).show();
+        }
+
+        function saveKegiatan() {
+            const data = getData('kegiatan');
+            data.push({
+                nama: document.getElementById('kegNama').value,
+                jenis: document.getElementById('kegJenis').value,
+                deskripsi: document.getElementById('kegDeskripsi').value
+            });
+            saveData('kegiatan', data);
+            bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
+            renderKegiatan();
+        }
+
+        function
