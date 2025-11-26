@@ -396,88 +396,160 @@
         </div>
     </section>
 
-    <!-- Bagian Organisasi (sudah diperbaiki strukturnya) -->
     <section id="organisasi">
         <div class="container">
-            <h2 class="section-title">Pengalaman Organisasi</h2>
-            <div id="organisasiList" class="row g-4 justify-content-center">
-                <!-- Jika data JS kosong, akan diisi oleh renderOrganisasi() -->
-                <!-- Terdapat 2 contoh card statis sebagai fallback -->
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="asset/hima.png" class="card-img-top" alt="Organisasi 1">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>Himpunan Mahasiswa Bisnis Digital</b></h5>
-                            <p class="card-text" style="text-align:justify;">
-                               <b>Divisi Pengabdian Masyarakat</b> – Mengadakan kegiatan sosial yang bermanfaat langsung bagi masyarakat sekitar melalui program edukasi, bantuan, dan pemberdayaan.
-                            </p>
-                            <small class="text-muted">2024 - 2025</small>
-                        </div>
-                    </div>
+          <h2 class="section-title">Pengalaman Organisasi</h2>
+          <div id="organisasiList" class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm interactive-card">
+                <img src="asset/hima.png" class="card-img-top" alt="Organisasi 1">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Himpunan Mahasiswa Bisnis Digital</b></h5>
+                  <p class="card-text" style="text-align:justify;">
+                     <b>Divisi Pengabdian Masyarakat</b> – Mengadakan kegiatan sosial yang bermanfaat langsung bagi masyarakat sekitar melalui program edukasi, bantuan, dan pemberdayaan.
+                  </p>
+                  <small class="text-muted">2024 - 2025</small>
                 </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <img src="asset/ukm3.png" class="card-img-top" alt="Organisasi 2">
-                        <div class="card-body">
-                            <h5 class="card-title"><b>UKM Olahraga</b></h5>
-                            <p class="card-text" style="text-align:justify;">
-                                <b>Ketua Umum</b> – Memimpin, mengoordinasikan, serta memastikan seluruh program dan kegiatan olahraga berjalan efektif untuk mencapai tujuan organisasi.
-                            </p>
-                            <small class="text-muted">2024 - 2025</small>
-                        </div>
-                    </div>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="card shadow-sm interactive-card">
+                <img src="asset/ukm3.png" class="card-img-top" alt="Organisasi 2">
+                <div class="card-body">
+                  <h5 class="card-title"><b>UKM Olahraga</b></h5>
+                  <p class="card-text" style="text-align:justify;">
+                    <b>Ketua Umum</b> – Memimpin, mengoordinasikan, serta memastikan seluruh program dan kegiatan olahraga berjalan efektif untuk mencapai tujuan organisasi.
+                  </p>
+                  <small class="text-muted">2024 - 2025</small>
                 </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+      
+      <style>
+      /* Interaksi card */
+      .interactive-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .interactive-card:hover {
+        transform: scale(1.05) translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      }
+      .interactive-card:active {
+        transform: scale(0.98) translateY(0);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      }
+      </style>
+      
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
 <section id="kegiatan" class="bg-light">
-    <div class="container">
-        <h2 class="section-title">Kegiatan Kampus</h2>
+  <div class="container">
+    <h2 class="section-title">Kegiatan Kampus</h2>
 
-        <div id="kegiatanList" class="gallery-grid"></div>
-
-
-        <div class="row justify-content-center">
-
-            <!-- Video 1 -->
-            <div class="col-md-6 mb-4 text-center">
-                <iframe 
-                    src="https://www.instagram.com/reel/DNwsJwGZA28/embed"
-                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
-                </iframe>
-                <p class="video-caption mt-2"><b>Talent Promosi BlueRun</b></p>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="col-md-6 mb-4 text-center">
-                <iframe 
-                    src="https://www.instagram.com/reel/DOIbHNmEuxm/embed"
-                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
-                </iframe>
-                <p class="video-caption mt-2"><b>Pelatihan Pembuatan Proposal dengan Asisten AI</b></p>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="col-md-6 mb-4 text-center">
-                <iframe 
-                    src="https://www.instagram.com/reel/DREiVoMkWe1/embed"
-                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
-                </iframe>
-                <p class="video-caption mt-2"><b>Acara Debat Ketua UKM Olahraga</b></p>
-            </div>
-
-            <!-- Video 4 -->
-            <div class="col-md-6 mb-4 text-center">
-                <iframe 
-                    src="https://www.instagram.com/reel/DMXFNTWPNIf/embed"
-                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
-                </iframe>
-                <p class="video-caption mt-2"><b>EXPO Project UI UX</b></p>
-            </div>
-
+    <!-- Slider -->
+    <div class="swiper kegiatanSwiper">
+      <div class="swiper-wrapper">
+        <!-- Video 1 -->
+        <div class="swiper-slide">
+          <div class="video-card" onclick="openModal(this)">
+            <iframe src="https://www.instagram.com/reel/DNwsJwGZA28/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="overlay"><p><b>Talent Promosi BlueRun</b></p></div>
+          </div>
         </div>
+        <!-- Video 2 -->
+        <div class="swiper-slide">
+          <div class="video-card" onclick="openModal(this)">
+            <iframe src="https://www.instagram.com/reel/DOIbHNmEuxm/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="overlay"><p><b>Pelatihan Proposal dengan Asisten AI</b></p></div>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="swiper-slide">
+          <div class="video-card" onclick="openModal(this)">
+            <iframe src="https://www.instagram.com/reel/DREiVoMkWe1/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="overlay"><p><b>Acara Debat Ketua UKM Olahraga</b></p></div>
+          </div>
+        </div>
+        <!-- Video 4 -->
+        <div class="swiper-slide">
+          <div class="video-card" onclick="openModal(this)">
+            <iframe src="https://www.instagram.com/reel/DMXFNTWPNIf/embed" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+            <div class="overlay"><p><b>EXPO Project UI UX</b></p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Panah navigasi -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- Pagination (opsional) -->
+      <div class="swiper-pagination"></div>
     </div>
+  </div>
 </section>
+
+<!-- Modal untuk video -->
+<div id="videoModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<style>
+.video-card { position: relative; cursor: pointer; overflow: hidden; border-radius: 10px; }
+.video-card iframe { width: 100%; height: 480px; transition: transform 0.3s ease; }
+.video-card:hover iframe { transform: scale(1.05); }
+.video-card .overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(10,42,67,0.6); color: #fff; text-align: center; padding: 10px 0;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.video-card:hover .overlay { opacity: 1; }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 999; left:0; top:0; width:50%; height:50%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; }
+.modal-content { width: 80%; max-width: 900px; }
+.modal .close { position: absolute; top:20px; right:40px; color:white; font-size:40px; cursor:pointer; }
+</style>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+const swiper = new Swiper('.kegiatanSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 2 },
+  },
+});
+
+function openModal(card) {
+  const modal = document.getElementById('videoModal');
+  const modalContent = document.getElementById('modalContent');
+  const iframe = card.querySelector('iframe').cloneNode(true);
+  iframe.style.width = '100%';
+  iframe.style.height = '600px';
+  modalContent.innerHTML = '';
+  modalContent.appendChild(iframe);
+  modal.style.display = 'flex';
+}
+
+function closeModal() { document.getElementById('videoModal').style.display = 'none'; }
+</script>
+
 
 
    <!-- Font Awesome (WAJIB AGAR ICON MUNCUL) -->
