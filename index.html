@@ -151,24 +151,58 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <button class="btn-primary-custom" onclick="addOrganisasi()"><i class="fas fa-plus me-2"></i>Tambah Organisasi</button>
-            </div>
         </div>
     </section>
 
-    <section id="kegiatan" class="bg-light">
-        <div class="container">
-            <h2 class="section-title">Kegiatan Kampus</h2>
-            <div id="kegiatanList" class="gallery-grid"></div>
-            <div class="text-center mt-4">
-                <button class="btn-primary-custom" onclick="addKegiatan()">
-                    <i class="fas fa-plus me-2"></i>Tambah Kegiatan
-                </button>
+<section id="kegiatan" class="bg-light">
+    <div class="container">
+        <h2 class="section-title">Kegiatan Kampus</h2>
+
+        <div id="kegiatanList" class="gallery-grid"></div>
+
+
+        <div class="row justify-content-center">
+
+            <!-- Video 1 -->
+            <div class="col-md-6 mb-4 text-center">
+                <iframe 
+                    src="https://www.instagram.com/reel/DNwsJwGZA28/embed"
+                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
+                </iframe>
+                <p class="video-caption mt-2"><b>Talent Promosi BlueRun</b></p>
             </div>
+
+            <!-- Video 2 -->
+            <div class="col-md-6 mb-4 text-center">
+                <iframe 
+                    src="https://www.instagram.com/reel/DOIbHNmEuxm/embed"
+                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
+                </iframe>
+                <p class="video-caption mt-2"><b>Pelatihan Pembuatan Proposal dengan Asisten AI</b></p>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="col-md-6 mb-4 text-center">
+                <iframe 
+                    src="https://www.instagram.com/reel/DREiVoMkWe1/embed"
+                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
+                </iframe>
+                <p class="video-caption mt-2"><b>Acara Debat Ketua UKM Olahraga</b></p>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="col-md-6 mb-4 text-center">
+                <iframe 
+                    src="https://www.instagram.com/reel/DMXFNTWPNIf/embed"
+                    width="70%" height="480" frameborder="0" scrolling="no" allowtransparency="true">
+                </iframe>
+                <p class="video-caption mt-2"><b>EXPO Project UI UX</b></p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="lomba">
         <div class="container">
@@ -493,7 +527,6 @@
             if (!list) return;
             const data = getData('kegiatan');
             if (!data || data.length === 0) {
-                list.innerHTML = '<div class="text-center"><p class="text-muted">Belum ada kegiatan. Klik tombol di bawah untuk menambahkan.</p></div>';
                 return;
             }
             list.innerHTML = data.map((item, index) => `
