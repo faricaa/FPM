@@ -1,342 +1,55 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0A2A43">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#0A2A43"/>
     <title>Farica Putri Maharani - Personal Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="#" id="manifest-placeholder">
+    <!-- Jangan set href="#" karena browser akan memuat manifest yang bukan JSON -->
+    <link rel="manifest" id="manifest-placeholder">
     <style>
         :root {
             --primary-dark: #0A2A43;
             --primary-light: #86BFE6;
             --white: #FFFFFF;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--primary-dark);
-            overflow-x: hidden;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .navbar {
-            background: var(--primary-dark) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1rem 0;
-        }
-        
-        .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: var(--white) !important;
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            color: var(--white) !important;
-            font-weight: 500;
-            transition: color 0.3s;
-            margin: 0 0.5rem;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-light) !important;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #144869 100%);
-            color: var(--white);
-            padding: 100px 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 5px solid var(--primary-light);
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.3s;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: var(--primary-dark);
-        }
-        
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s;
-        }
-        
-        .hero .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1.2s;
-        }
-        
-        .btn-primary-custom {
-            background: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            border: none;
-            transition: all 0.3s;
-            margin: 0.5rem;
-            cursor: pointer;
-        }
-        
-        .btn-primary-custom:hover {
-            background: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--primary-light);
-            display: block;
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-        
-        .info-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
-            border-left: 5px solid var(--primary-light);
-        }
-        
-        .info-card strong {
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        
-        .skill-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
-            transition: all 0.3s;
-            animation: slideIn 0.5s;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-        }
-        
-        .skill-item i {
-            color: var(--primary-light);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .experience-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .experience-card:hover {
-            border-color: var(--primary-light);
-            transform: translateY(-5px);
-        }
-        
-        .experience-card h4 {
-            color: var(--primary-dark);
-            font-weight: 600;
-        }
-        
-        .badge-custom {
-            background: var(--primary-light);
-            color: var(--primary-dark);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-            height: 250px;
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
-            transition: all 0.3s;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 30px;
-            margin: 1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            color: var(--white);
-        }
-        
-        .contact-btn i {
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        
-        .contact-btn.instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-        
-        .contact-btn.whatsapp {
-            background: #25D366;
-        }
-        
-        .contact-btn.email {
-            background: var(--primary-dark);
-        }
-        
-        .contact-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            color: var(--white);
-        }
-        
-        footer {
-            background: var(--primary-dark);
-            color: var(--white);
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .modal-content {
-            border-radius: 15px;
-        }
-        
-        .modal-header {
-            background: var(--primary-dark);
-            color: var(--white);
-            border-radius: 15px 15px 0 0;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .install-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-light);
-            color: var(--primary-dark);
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            display: none;
-            z-index: 1000;
-            cursor: pointer;
-        }
-        
-        .install-btn:hover {
-            transform: scale(1.05);
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .profile-img {
-                width: 200px;
-                height: 200px;
-                font-size: 60px;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; color:var(--primary-dark); overflow-x:hidden; }
+        h1,h2,h3,h4,h5,h6 { font-family:'Poppins',sans-serif; }
+        .navbar { background:var(--primary-dark) !important; box-shadow:0 2px 10px rgba(0,0,0,0.1); padding:1rem 0; }
+        .navbar-brand { font-weight:700; color:var(--white) !important; font-size:1.5rem; }
+        .nav-link { color:var(--white) !important; font-weight:500; transition:color .3s; margin:0 .5rem; }
+        .nav-link:hover { color:var(--primary-light) !important; }
+        .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, #144869 100%); color:var(--white); padding:100px 0; min-height:100vh; display:flex; align-items:center; }
+        .profile-img { width:250px; height:250px; border-radius:50%; border:5px solid var(--primary-light); object-fit:cover; cursor:pointer; transition:transform .3s; background:var(--white); display:flex; align-items:center; justify-content:center; font-size:80px; color:var(--primary-dark); overflow:hidden; }
+        .profile-img img { width:100%; height:100%; object-fit:cover; }
+        .profile-img:hover { transform:scale(1.05); }
+        .hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem; animation:fadeInUp 1s; }
+        .hero .tagline { font-size:1.2rem; opacity:0.9; animation:fadeInUp 1.2s; }
+        .btn-primary-custom { background:var(--primary-light); color:var(--primary-dark); padding:12px 30px; border-radius:30px; font-weight:600; border:none; transition:all .3s; margin:.5rem; cursor:pointer; }
+        .btn-primary-custom:hover { background:var(--white); transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,0,0,0.3); }
+        section { padding:80px 0; }
+        .section-title { font-size:2.5rem; font-weight:700; color:var(--primary-dark); margin-bottom:3rem; text-align:center; position:relative; }
+        .section-title::after { content:''; width:80px; height:4px; background:var(--primary-light); display:block; margin:1rem auto; border-radius:2px; }
+        .info-card, .skill-item, .experience-card { background:var(--white); border-radius:15px; padding:1.5rem; box-shadow:0 5px 20px rgba(0,0,0,0.1); margin-bottom:1rem; }
+        .skill-item { transition:all .3s; animation:slideIn .5s; }
+        .skill-item:hover, .experience-card:hover { transform:translateY(-5px); box-shadow:0 5px 25px rgba(0,0,0,0.15); }
+        .badge-custom { background:var(--primary-light); color:var(--primary-dark); padding:.5rem 1rem; border-radius:20px; font-weight:500; }
+        .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+        .gallery-item { border-radius:15px; overflow:hidden; cursor:pointer; position:relative; height:250px; background:linear-gradient(135deg,var(--primary-light),var(--primary-dark)); display:flex; align-items:center; justify-content:center; color:var(--white); font-size:3rem; transition:all .3s; }
+        footer { background:var(--primary-dark); color:var(--white); padding:2rem 0; text-align:center; }
+        .modal-content { border-radius:15px; }
+        .modal-header { background:var(--primary-dark); color:var(--white); border-radius:15px 15px 0 0; }
+        .install-btn { position:fixed; bottom:20px; right:20px; background:var(--primary-light); color:var(--primary-dark); border:none; padding:15px 25px; border-radius:50px; font-weight:600; box-shadow:0 5px 20px rgba(0,0,0,0.3); display:none; z-index:1000; cursor:pointer; }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to { opacity:1; transform:translateY(0);} }
+        @keyframes slideIn { from { opacity:0; transform:translateX(-30px);} to { opacity:1; transform:translateX(0);} }
+        @media (max-width:768px) {
+            .hero h1 { font-size:2rem; }
+            .profile-img { width:200px; height:200px; font-size:60px; }
+            .section-title { font-size:2rem; }
         }
     </style>
 </head>
@@ -368,27 +81,10 @@
                     <div class="profile-img mx-auto" onclick="showImageModal()">
                         <img src="asset/cnth.png" alt="Foto Profil" class="foto-profil">
                     </div>
-                    <style>.profile-img {
-                        width: 180px;       
-                        height: 180px;
-                        border-radius: 50%;  
-                        overflow: hidden;   
-                        border: 3px solid #fff;
-                        cursor: pointer;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    
-                    .profile-img img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;   
-                    }</style>
                 </div>
                 <div class="col-lg-8">
                     <h1>Farica Putri Maharani</h1>
-                    <p class="tagline">"Halo! Saya Mahasiswa Bisnis Digital yang kreatif dan tertarik pada dunia data. Saya suka shopping, olahraga, dan nonton film. Saya ingin berkarier sebagai Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam inovasi teknologi dan bisnis! ✨"</p>
+                    <p class="tagline">Halo! Saya Mahasiswa Bisnis Digital yang kreatif dan tertarik pada dunia data. Saya suka shopping, olahraga, dan nonton film. Saya ingin berkarier sebagai Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam inovasi teknologi dan bisnis! ✨</p>
                     <div class="mt-4">
                         <a href="#about" class="btn-primary-custom">Tentang Saya</a>
                         <a href="#contact" class="btn-primary-custom">Hubungi Saya</a>
@@ -421,105 +117,46 @@
                     <p>Saya ingin membangun karier di bidang data sebagai Data Analyst atau Data Scientist. Saya suka mengubah data menjadi cerita dan solusi yang bermanfaat bagi bisnis. Saya siap belajar hal baru, beradaptasi, dan berkontribusi di lingkungan kerja yang positif dan kreatif.</p>
                 </div>
             </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-6 mb-4">
-                    <h4 class="mb-4">Hard Skills</h4>
-                    <div class="skill-item">
-                        <i class="fas fa-bullhorn"></i>
-                        <h5>Digital Marketing</h5>
-                        <p>Strategi pemasaran digital dan media sosial</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-palette"></i>
-                        <h5>UI/UX Basic</h5>
-                        <p>Desain antarmuka dan pengalaman pengguna</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h5>Manajemen Bisnis</h5>
-                        <p>Perencanaan dan strategi bisnis</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-laptop"></i>
-                        <h5>Microsoft Office</h5>
-                        <p>Word, Excel, PowerPoint</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h4 class="mb-4">Soft Skills</h4>
-                    <div class="skill-item">
-                        <i class="fas fa-microphone"></i>
-                        <h5>Public Speaking</h5>
-                        <p>Kemampuan presentasi dan komunikasi</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-users"></i>
-                        <h5>Teamwork</h5>
-                        <p>Kolaborasi dan kerjasama tim</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-crown"></i>
-                        <h5>Leadership</h5>
-                        <p>Kepemimpinan dan manajemen tim</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-clock"></i>
-                        <h5>Time Management</h5>
-                        <p>Manajemen waktu yang efektif</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    
-            <div id="organisasiList" class="row g-4">
-    
-                <section id="organisasi">
-                    <div class="container">
-                        <h2 class="section-title">Pengalaman Organisasi</h2>
-                        
-                        <!-- Tambahkan justify-content-center di sini -->
-                        <div class="row justify-content-center">
-                            
-                            <!-- Card 1 -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm">
-                                    <img src="asset/hima.png" class="card-img-top" alt="Organisasi 1">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><b>Himpunan Mahasiswa Bisnis Digital</b></h5>
-                                        <p class="card-text">
-                                           <b>Divisi Pengabdian Masyarakat</b> – Mengadakan kegiatan sosial yang bermanfaat langsung bagi masyarakat sekitar melalui program edukasi, bantuan, dan pemberdayaan.
-                                        </p>
-                                        <small class="text-muted">2024 - 2025</small>
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Card 2 -->
-                            <div class="col-md-4">
-                                <div class="card shadow-sm">
-                                    <img src="asset/ukm3.png" class="card-img-top" alt="Organisasi 2">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><B>UKM Olahraga</B></h5>
-                                        <p class="card-text">
-                                            <b>Ketua Umum</b>  – Memimpin, mengoordinasikan, serta memastikan seluruh program dan kegiatan olahraga berjalan efektif untuk mencapai tujuan organisasi.
-                                        </p>
-                                        <small class="text-muted">2024 - 2025</small>
-                                    </div>
-                                </div>
-                            </div>
-                
+    <!-- Bagian Organisasi (sudah diperbaiki strukturnya) -->
+    <section id="organisasi">
+        <div class="container">
+            <h2 class="section-title">Pengalaman Organisasi</h2>
+            <div id="organisasiList" class="row g-4 justify-content-center">
+                <!-- Jika data JS kosong, akan diisi oleh renderOrganisasi() -->
+                <!-- Terdapat 2 contoh card statis sebagai fallback -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="asset/hima.png" class="card-img-top" alt="Organisasi 1">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>Himpunan Mahasiswa Bisnis Digital</b></h5>
+                            <p class="card-text" style="text-align:justify;">
+                               <b>Divisi Pengabdian Masyarakat</b> – Mengadakan kegiatan sosial yang bermanfaat langsung bagi masyarakat sekitar melalui program edukasi, bantuan, dan pemberdayaan.
+                            </p>
+                            <small class="text-muted">2024 - 2025</small>
                         </div>
                     </div>
-                </section> 
-                
-    
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm">
+                        <img src="asset/ukm3.png" class="card-img-top" alt="Organisasi 2">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>UKM Olahraga</b></h5>
+                            <p class="card-text" style="text-align:justify;">
+                                <b>Ketua Umum</b> – Memimpin, mengoordinasikan, serta memastikan seluruh program dan kegiatan olahraga berjalan efektif untuk mencapai tujuan organisasi.
+                            </p>
+                            <small class="text-muted">2023 - 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn-primary-custom" onclick="addOrganisasi()"><i class="fas fa-plus me-2"></i>Tambah Organisasi</button>
             </div>
         </div>
     </section>
-    
 
     <section id="kegiatan" class="bg-light">
         <div class="container">
@@ -557,22 +194,69 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Hubungi Saya</h2>
-            <div class="text-center">
-                <a href="https://www.instagram.com/frcp16?igsh=bWllN2x2aGhpM25i" target="_blank" class="contact-btn instagram">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://wa.me/6282142378801" target="_blank" class="contact-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="mailto:farica@example.com" class="contact-btn email">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-            </div>
+   <!-- Font Awesome (WAJIB AGAR ICON MUNCUL) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Hubungi Saya</h2>
+
+        <div class="text-center mt-4">
+
+            <a href="https://www.instagram.com/frcp16?igsh=bWllN2x2aGhpM25i" 
+               target="_blank" 
+               class="contact-btn instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+
+            <a href="https://wa.me/6282142378801" 
+               target="_blank" 
+               class="contact-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="mailto:farica@example.com" 
+               class="contact-btn email">
+                <i class="fa-solid fa-envelope"></i> Email
+            </a>
+            <style>/* ---- CONTACT BUTTON STYLE ---- */
+                .contact-btn { 
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 15px 35px;
+                    border-radius: 40px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                    text-decoration: none;
+                    margin: 10px;
+                    transition: 0.3s;
+                }
+                
+                .contact-btn.instagram {
+                    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+                }
+                
+                .contact-btn.whatsapp {
+                    background-color: #25D366;
+                }
+                
+                .contact-btn.email {
+                    background-color: #062D4A;
+                }
+                
+                .contact-btn:hover {
+                    transform: translateY(-3px);
+                    opacity: 0.9;
+                }
+                </style>
+
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <footer>
         <div class="container">
@@ -580,9 +264,7 @@
         </div>
     </footer>
 
-    <button class="install-btn" id="installBtn">
-        <i class="fas fa-download me-2"></i>Install App
-    </button>
+    <button class="install-btn" id="installBtn"><i class="fas fa-download me-2"></i>Install App</button>
 
     <div class="modal fade" id="detailModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -610,28 +292,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register(createServiceWorker())
-                .then(reg => console.log('Service Worker Registered'))
-                .catch(err => console.log('Service Worker Error', err));
+        // --- Helper localStorage ---
+        function getData(key) {
+            try {
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : [];
+            } catch (e) {
+                console.warn('Error parsing localStorage for', key, e);
+                return [];
+            }
+        }
+        function saveData(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
         }
 
+        // --- Service worker (gunakan blob URL) ---
         function createServiceWorker() {
             const swCode = `
                 const CACHE_NAME = 'farica-pwa-v1';
                 const urlsToCache = ['/'];
-                
                 self.addEventListener('install', event => {
                     event.waitUntil(
                         caches.open(CACHE_NAME)
-                            .then(cache => cache.addAll(urlsToCache))
+                              .then(cache => cache.addAll(urlsToCache))
                     );
                 });
-                
                 self.addEventListener('fetch', event => {
                     event.respondWith(
                         caches.match(event.request)
-                            .then(response => response || fetch(event.request))
+                              .then(response => response || fetch(event.request))
                     );
                 });
             `;
@@ -639,83 +328,109 @@
             return URL.createObjectURL(blob);
         }
 
-        const manifest = {
-            name: 'Farica Putri Maharani',
-            short_name: 'FPM',
-            description: 'Personal Website Farica Putri Maharani',
-            start_url: '/',
-            display: 'standalone',
-            background_color: '#0A2A43',
-            theme_color: '#0A2A43',
-            icons: [{
-                src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230A2A43" width="100" height="100"/><text y="75" font-size="80" fill="%2386BFE6" font-family="Arial" text-anchor="middle" x="50">F</text></svg>',
-                sizes: '512x512',
-                type: 'image/svg+xml'
-            }]
-        };
+        if ('serviceWorker' in navigator) {
+            try {
+                navigator.serviceWorker.register(createServiceWorker())
+                    .then(reg => console.log('Service Worker Registered'))
+                    .catch(err => console.log('Service Worker Error', err));
+            } catch (e) {
+                console.warn('Service worker registration failed', e);
+            }
+        }
 
-        const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
-        const manifestURL = URL.createObjectURL(manifestBlob);
-        document.getElementById('manifest-placeholder').setAttribute('href', manifestURL);
+        // --- Manifest dynamic creation (set href AFTER blob dibuat) ---
+        (function createManifest() {
+            const manifest = {
+                name: 'Farica Putri Maharani',
+                short_name: 'FPM',
+                description: 'Personal Website Farica Putri Maharani',
+                start_url: '/',
+                display: 'standalone',
+                background_color: '#0A2A43',
+                theme_color: '#0A2A43',
+                icons: [{
+                    src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%230A2A43" width="100" height="100"/><text y="75" font-size="80" fill="%2386BFE6" font-family="Arial" text-anchor="middle" x="50">F</text></svg>',
+                    sizes: '512x512',
+                    type: 'image/svg+xml'
+                }]
+            };
+            try {
+                const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+                const manifestURL = URL.createObjectURL(manifestBlob);
+                const linkEl = document.getElementById('manifest-placeholder');
+                if (linkEl) linkEl.setAttribute('href', manifestURL);
+            } catch (e) {
+                console.warn('Manifest creation failed', e);
+            }
+        })();
 
+        // --- beforeinstallprompt handling ---
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            document.getElementById('installBtn').style.display = 'block';
+            const btn = document.getElementById('installBtn');
+            if (btn) btn.style.display = 'block';
         });
+        const installBtn = document.getElementById('installBtn');
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    try {
+                        const { outcome } = await deferredPrompt.userChoice;
+                        deferredPrompt = null;
+                        installBtn.style.display = 'none';
+                        console.log('Install outcome:', outcome);
+                    } catch (e) {
+                        console.warn('Install prompt error', e);
+                    }
+                }
+            });
+        }
 
-        document.getElementById('installBtn').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                deferredPrompt = null;
-                document.getElementById('installBtn').style.display = 'none';
-            }
-        });
-
+        // --- Smooth scroll for anchor links ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                // Jika target ada, lakukan scroll
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        function getData(key) {
-            const data = localStorage.getItem(key);
-            return data ? JSON.parse(data) : [];
-        }
-
-        function saveData(key, data) {
-            localStorage.setItem(key, JSON.stringify(data));
-        }
-
+        // --- Organisasi (CRUD sederhana) ---
         function renderOrganisasi() {
             const list = document.getElementById('organisasiList');
+            if (!list) return;
             const data = getData('organisasi');
-            
-            if (data.length === 0) {
-                list.innerHTML = '<div class="col-12 text-center"><p class="text-muted">Belum ada data organisasi. Klik tombol di bawah untuk menambahkan.</p></div>';
+            if (!data || data.length === 0) {
+                // Jangan kosongkan sepenuhnya karena ada fallback card statis
+                // Tetapi kita bisa tampilkan pesan kecil
+                // list.innerHTML = '<div class="col-12 text-center"><p class="text-muted">Belum ada data organisasi. Klik tombol di bawah untuk menambahkan.</p></div>';
                 return;
             }
-            
             list.innerHTML = data.map((item, index) => `
                 <div class="col-lg-6 mb-4">
                     <div class="experience-card" onclick="showOrganisasiDetail(${index})">
-                        <h4>${item.nama}</h4>
-                        <p class="mb-2"><span class="badge-custom">${item.jabatan}</span></p>
-                        <p class="text-muted mb-0"><i class="fas fa-calendar me-2"></i>${item.tahun}</p>
+                        <h4>${escapeHtml(item.nama)}</h4>
+                        <p class="mb-2"><span class="badge-custom">${escapeHtml(item.jabatan)}</span></p>
+                        <p class="text-muted mb-0"><i class="fas fa-calendar me-2"></i>${escapeHtml(item.tahun)}</p>
                     </div>
                 </div>
             `).join('');
         }
 
         function addOrganisasi() {
-            document.getElementById('formModalTitle').textContent = 'Tambah Organisasi';
-            document.getElementById('formModalBody').innerHTML = `
+            const titleEl = document.getElementById('formModalTitle');
+            const bodyEl = document.getElementById('formModalBody');
+            if (!titleEl || !bodyEl) return;
+            titleEl.textContent = 'Tambah Organisasi';
+            bodyEl.innerHTML = `
                 <div class="mb-3">
                     <label class="form-label">Nama Organisasi</label>
                     <input type="text" class="form-control" id="orgNama" required>
@@ -738,12 +453,17 @@
         }
 
         function saveOrganisasi() {
+            const namaEl = document.getElementById('orgNama');
+            const jabEl = document.getElementById('orgJabatan');
+            const thnEl = document.getElementById('orgTahun');
+            const peranEl = document.getElementById('orgPeran');
+            if (!namaEl || !jabEl || !thnEl || !peranEl) return;
             const data = getData('organisasi');
             data.push({
-                nama: document.getElementById('orgNama').value,
-                jabatan: document.getElementById('orgJabatan').value,
-                tahun: document.getElementById('orgTahun').value,
-                peran: document.getElementById('orgPeran').value
+                nama: namaEl.value.trim(),
+                jabatan: jabEl.value.trim(),
+                tahun: thnEl.value.trim(),
+                peran: peranEl.value.trim()
             });
             saveData('organisasi', data);
             bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
@@ -751,36 +471,44 @@
         }
 
         function showOrganisasiDetail(index) {
-            const data = getData('organisasi')[index];
-            document.getElementById('modalTitle').textContent = data.nama;
-            document.getElementById('modalBody').innerHTML = `
-                <p><strong>Jabatan:</strong> ${data.jabatan}</p>
-                <p><strong>Tahun:</strong> ${data.tahun}</p>
+            const data = getData('organisasi');
+            if (!data || !data[index]) return;
+            const item = data[index];
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            if (!title || !body) return;
+            title.textContent = item.nama;
+            body.innerHTML = `
+                <p><strong>Jabatan:</strong> ${escapeHtml(item.jabatan)}</p>
+                <p><strong>Tahun:</strong> ${escapeHtml(item.tahun)}</p>
                 <p><strong>Peran & Pencapaian:</strong></p>
-                <p>${data.peran}</p>
+                <p>${escapeHtml(item.peran)}</p>
             `;
             new bootstrap.Modal(document.getElementById('detailModal')).show();
         }
 
+        // --- Kegiatan ---
         function renderKegiatan() {
             const list = document.getElementById('kegiatanList');
+            if (!list) return;
             const data = getData('kegiatan');
-            
-            if (data.length === 0) {
+            if (!data || data.length === 0) {
                 list.innerHTML = '<div class="text-center"><p class="text-muted">Belum ada kegiatan. Klik tombol di bawah untuk menambahkan.</p></div>';
                 return;
             }
-            
             list.innerHTML = data.map((item, index) => `
-                <div class="gallery-item" onclick="showKegiatanDetail(${index})">
+                <div class="gallery-item" onclick="showKegiatanDetail(${index})" title="${escapeHtml(item.nama)}">
                     <i class="fas fa-image"></i>
                 </div>
             `).join('');
         }
 
         function addKegiatan() {
-            document.getElementById('formModalTitle').textContent = 'Tambah Kegiatan';
-            document.getElementById('formModalBody').innerHTML = `
+            const titleEl = document.getElementById('formModalTitle');
+            const bodyEl = document.getElementById('formModalBody');
+            if (!titleEl || !bodyEl) return;
+            titleEl.textContent = 'Tambah Kegiatan';
+            bodyEl.innerHTML = `
                 <div class="mb-3">
                     <label class="form-label">Nama Kegiatan</label>
                     <input type="text" class="form-control" id="kegNama" required>
@@ -804,15 +532,159 @@
         }
 
         function saveKegiatan() {
+            const nama = document.getElementById('kegNama')?.value.trim() || '';
+            const jenis = document.getElementById('kegJenis')?.value || '';
+            const deskripsi = document.getElementById('kegDeskripsi')?.value.trim() || '';
+            if (!nama) return alert('Isi nama kegiatan');
             const data = getData('kegiatan');
-            data.push({
-                nama: document.getElementById('kegNama').value,
-                jenis: document.getElementById('kegJenis').value,
-                deskripsi: document.getElementById('kegDeskripsi').value
-            });
+            data.push({ nama, jenis, deskripsi });
             saveData('kegiatan', data);
             bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
             renderKegiatan();
         }
 
-        function
+        function showKegiatanDetail(index) {
+            const data = getData('kegiatan');
+            if (!data || !data[index]) return;
+            const item = data[index];
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            if (!title || !body) return;
+            title.textContent = item.nama;
+            body.innerHTML = `
+                <p><strong>Jenis:</strong> ${escapeHtml(item.jenis)}</p>
+                <p>${escapeHtml(item.deskripsi)}</p>
+            `;
+            new bootstrap.Modal(document.getElementById('detailModal')).show();
+        }
+
+        // --- Lomba ---
+        function renderLomba() {
+            const list = document.getElementById('lombaList');
+            if (!list) return;
+            const data = getData('lomba');
+            if (!data || data.length === 0) {
+                list.innerHTML = '<div class="col-12 text-center"><p class="text-muted">Belum ada pengalaman lomba.</p></div>';
+                return;
+            }
+            list.innerHTML = data.map((item, index) => `
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>${escapeHtml(item.nama)}</h5>
+                        <p class="mb-1"><small class="text-muted">${escapeHtml(item.tahun)}</small></p>
+                        <p>${escapeHtml(item.deskripsi)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addLomba() {
+            const titleEl = document.getElementById('formModalTitle');
+            const bodyEl = document.getElementById('formModalBody');
+            if (!titleEl || !bodyEl) return;
+            titleEl.textContent = 'Tambah Pengalaman Lomba';
+            bodyEl.innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">Nama Lomba</label>
+                    <input type="text" class="form-control" id="lombaNama" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tahun</label>
+                    <input type="text" class="form-control" id="lombaTahun">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="lombaDeskripsi" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary w-100" onclick="saveLomba()">Simpan</button>
+            `;
+            new bootstrap.Modal(document.getElementById('formModal')).show();
+        }
+
+        function saveLomba() {
+            const nama = document.getElementById('lombaNama')?.value.trim() || '';
+            const tahun = document.getElementById('lombaTahun')?.value.trim() || '';
+            const deskripsi = document.getElementById('lombaDeskripsi')?.value.trim() || '';
+            if (!nama) return alert('Isi nama lomba');
+            const data = getData('lomba');
+            data.push({ nama, tahun, deskripsi });
+            saveData('lomba', data);
+            bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
+            renderLomba();
+        }
+
+        // --- Project ---
+        function renderProject() {
+            const list = document.getElementById('projectList');
+            if (!list) return;
+            const data = getData('project');
+            if (!data || data.length === 0) {
+                list.innerHTML = '<div class="col-12 text-center"><p class="text-muted">Belum ada project.</p></div>';
+                return;
+            }
+            list.innerHTML = data.map((item, index) => `
+                <div class="col-md-6 mb-3">
+                    <div class="info-card">
+                        <h5>${escapeHtml(item.nama)}</h5>
+                        <p class="mb-1"><small class="text-muted">${escapeHtml(item.tahun)}</small></p>
+                        <p>${escapeHtml(item.deskripsi)}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addProject() {
+            const titleEl = document.getElementById('formModalTitle');
+            const bodyEl = document.getElementById('formModalBody');
+            if (!titleEl || !bodyEl) return;
+            titleEl.textContent = 'Tambah Project';
+            bodyEl.innerHTML = `
+                <div class="mb-3">
+                    <label class="form-label">Nama Project</label>
+                    <input type="text" class="form-control" id="projNama" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tahun</label>
+                    <input type="text" class="form-control" id="projTahun">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Deskripsi</label>
+                    <textarea class="form-control" id="projDeskripsi" rows="3"></textarea>
+                </div>
+                <button class="btn btn-primary w-100" onclick="saveProject()">Simpan</button>
+            `;
+            new bootstrap.Modal(document.getElementById('formModal')).show();
+        }
+
+        function saveProject() {
+            const nama = document.getElementById('projNama')?.value.trim() || '';
+            const tahun = document.getElementById('projTahun')?.value.trim() || '';
+            const deskripsi = document.getElementById('projDeskripsi')?.value.trim() || '';
+            if (!nama) return alert('Isi nama project');
+            const data = getData('project');
+            data.push({ nama, tahun, deskripsi });
+            saveData('project', data);
+            bootstrap.Modal.getInstance(document.getElementById('formModal')).hide();
+            renderProject();
+        }
+
+        // --- Small helpers ---
+        function escapeHtml(str = '') {
+            return String(str)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#39;');
+        }
+
+        // --- Init render semua list saat load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderOrganisasi();
+            renderKegiatan();
+            renderLomba();
+            renderProject();
+        });
+    </script>
+</body>
+</html>
