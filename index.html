@@ -155,7 +155,48 @@
                         Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam
                         inovasi teknologi dan bisnis! ✨
                     </p>
-    
+    <style><style><style>
+        /* Container animasi memenuhi seluruh section */
+        #about {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Bubble animation container */
+        .bubble-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* agar tidak mengganggu klik */
+            overflow: hidden;
+        }
+        
+        /* Bubble */
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 150, 255, 0.3);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in;
+            filter: blur(1px);
+        }
+        
+        /* Animasi naik dari bawah ke atas */
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+        </style></style>
                     <div class="mt-4">
                         <a href="#about" class="btn-primary-custom">Tentang Saya</a>
                         <a href="#contact" class="btn-primary-custom">Hubungi Saya</a>
@@ -258,7 +299,42 @@
         }
     }
     </style>
-    </style>
+
+
+<style>/* Background animasi bergerak untuk ABOUT */
+#about {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e0f1ff, #f6fcff);
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 123, 255, 0.25) 0%,
+        rgba(0, 123, 255, 0) 60%
+    );
+    animation: moveBG 8s linear infinite;
+}
+
+@keyframes moveBG {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20%, 20%);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+</style>
     <section id="about" class="bg-light">
         <div class="container">
             <h2 class="section-title">Tentang Saya</h2>
@@ -280,7 +356,31 @@
                 <div class="col-lg-6">
                     <h4 class="mb-4">Tujuan Karier</h4>
                     <p>Saya ingin membangun karier di bidang data sebagai Data Analyst atau Data Scientist. Saya suka mengubah data menjadi cerita dan solusi yang bermanfaat bagi bisnis. Saya siap belajar hal baru, beradaptasi, dan berkontribusi di lingkungan kerja yang positif dan kreatif.</p>
+                  <!-- Animasi Data Analyst -->
+<div class="animasi-karier text-center mt-4">
+    <lottie-player 
+        src="https://assets1.lottiefiles.com/packages/lf20_z01bika0.json"
+        background="transparent"
+        speed="1"
+        style="width: 320px; height: 320px; margin: auto;"
+        loop
+        autoplay>
+    </lottie-player>
+</div>
+<style>.animasi-karier {
+    padding: 20px 0;
+}
+
+.animasi-karier h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #0A2A43;
+}
+</style>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 </div>
+              
+
                 <div class="bubble-animation">
                     <div class="bubble" style="left:5%; animation-duration:7s;"></div>
                     <div class="bubble" style="left:15%; animation-duration:9s;"></div>
