@@ -73,26 +73,149 @@
             </div>
         </div>
     </nav>
+    <style>
+        /* Efek sembunyi-muncul pada item navbar */
+        .navbar-nav .nav-link {
+            opacity: 0;
+            transform: translateY(-15px);
+            transition: all 0.6s ease;
+        }
+        
+        .navbar-nav .nav-link.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        </style>
+        
+        <script>
+        // Intersection Observer untuk membuat nav item muncul saat di-scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else {
+                        entry.target.classList.remove("show"); // Hilang lagi saat scroll naik
+                    }
+                });
+            }, { threshold: 0.5 });
+        
+            navLinks.forEach((link) => {
+                observer.observe(link);
+            });
+        });
+        </script>
+        
 
     <section id="home" class="hero">
+        <style>
+            .text-blue {
+                color: #007bff;
+                font-weight: 700;
+            }
+    
+            .text-white {
+                color: #ffffff;
+                font-weight: 700;
+            }
+    
+            .typing {
+                font-size: 20px;
+                font-weight: 600;
+                border-right: 3px solid #007bff;
+                white-space: nowrap;
+                overflow: hidden;
+                width: fit-content;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+            }
+        </style>
+    
         <div class="container">
             <div class="row align-items-center">
+    
+                <!-- FOTO PROFIL -->
                 <div class="col-lg-4 text-center mb-4">
                     <div class="profile-img mx-auto" onclick="showImageModal()">
                         <img src="asset/cnth.png" alt="Foto Profil" class="foto-profil">
                     </div>
                 </div>
+    
+                <!-- TEKS -->
                 <div class="col-lg-8">
-                    <h1>Farica Putri Maharani</h1>
-                    <p class="tagline">Halo! Saya Mahasiswa Bisnis Digital yang kreatif dan tertarik pada dunia data. Saya suka shopping, olahraga, dan nonton film. Saya ingin berkarier sebagai Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam inovasi teknologi dan bisnis! ✨</p>
+                    <h1>HI, It's <span class="text-blue">Farica</span></h1>
+    
+                    <p class="typing" id="typingText"></p>
+    
+                    <p class="tagline">
+                        Halo! Saya Mahasiswa Bisnis Digital yang kreatif dan tertarik pada dunia data.
+                        Saya suka shopping, olahraga, dan nonton film. Saya ingin berkarier sebagai
+                        Data Analyst atau Data Scientist dan siap belajar serta berkontribusi dalam
+                        inovasi teknologi dan bisnis! ✨
+                    </p>
+    
                     <div class="mt-4">
                         <a href="#about" class="btn-primary-custom">Tentang Saya</a>
                         <a href="#contact" class="btn-primary-custom">Hubungi Saya</a>
                     </div>
                 </div>
+    
             </div>
         </div>
+    
+        <script>
+            const typingElement = document.getElementById("typingText");
+            const fullText = "Aku seorang Data Scientist aamiin";
+            let index = 0;
+            let isTyping = false; // supaya tidak ngetik 2x bersamaan
+    
+            function startTyping() {
+                if (isTyping) return; // cegah double animasi
+    
+                isTyping = true;
+                index = 0;
+                typingElement.innerHTML = ""; // reset teks
+    
+                function type() {
+                    typingElement.innerHTML = fullText.substring(0, index);
+    
+                    if (index < fullText.length) {
+                        index++;
+                        setTimeout(type, 55);
+                    } else {
+                        typingElement.innerHTML =
+                            "<span class='text-white'>Aku seorang </span>" +
+                            "<span class='text-blue'>Data Scientist aamiin</span>";
+                        isTyping = false;
+                    }
+                }
+    
+                type();
+            }
+    
+            // Deteksi saat HOME muncul di layar
+            const homeSection = document.querySelector("#home");
+    
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            startTyping(); // jalankan animasi lagi
+                        }
+                    });
+                },
+                { threshold: 0.6 } // 60% terlihat baru aktif
+            );
+    
+            observer.observe(homeSection);
+    
+            // mulai saat pertama kali buka web
+            startTyping();
+        </script>
     </section>
+    
 
     <section id="about" class="bg-light">
         <div class="container">
