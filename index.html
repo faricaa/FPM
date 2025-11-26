@@ -216,7 +216,49 @@
         </script>
     </section>
     
-
+<style><style>
+    /* Container animasi memenuhi seluruh section */
+    #about {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Bubble animation container */
+    .bubble-animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none; /* agar tidak mengganggu klik */
+        overflow: hidden;
+    }
+    
+    /* Bubble */
+    .bubble {
+        position: absolute;
+        bottom: -50px;
+        width: 20px;
+        height: 20px;
+        background: rgba(0, 150, 255, 0.3);
+        border-radius: 50%;
+        animation: rise 8s infinite ease-in;
+        filter: blur(1px);
+    }
+    
+    /* Animasi naik dari bawah ke atas */
+    @keyframes rise {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 0.3;
+        }
+        100% {
+            transform: translateY(-120vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+    </style>
+    </style>
     <section id="about" class="bg-light">
         <div class="container">
             <h2 class="section-title">Tentang Saya</h2>
@@ -239,6 +281,19 @@
                     <h4 class="mb-4">Tujuan Karier</h4>
                     <p>Saya ingin membangun karier di bidang data sebagai Data Analyst atau Data Scientist. Saya suka mengubah data menjadi cerita dan solusi yang bermanfaat bagi bisnis. Saya siap belajar hal baru, beradaptasi, dan berkontribusi di lingkungan kerja yang positif dan kreatif.</p>
                 </div>
+                <div class="bubble-animation">
+                    <div class="bubble" style="left:5%; animation-duration:7s;"></div>
+                    <div class="bubble" style="left:15%; animation-duration:9s;"></div>
+                    <div class="bubble" style="left:25%; animation-duration:6s;"></div>
+                    <div class="bubble" style="left:35%; animation-duration:8s;"></div>
+                    <div class="bubble" style="left:45%; animation-duration:10s;"></div>
+                    <div class="bubble" style="left:55%; animation-duration:7s;"></div>
+                    <div class="bubble" style="left:65%; animation-duration:9s;"></div>
+                    <div class="bubble" style="left:75%; animation-duration:6s;"></div>
+                    <div class="bubble" style="left:85%; animation-duration:8s;"></div>
+                    <div class="bubble" style="left:95%; animation-duration:11s;"></div>
+                </div>
+                
             </div>
         </div>
     </section>
